@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-import { FetchingNPMListAction } from "../../store/actions";
+// import { FetchingNPMListAction } from "../../store/actions";
 import { useSelector } from "react-redux";
+import useActions from "../../hooks/useActions";
 
 const SearchComponent: React.FC<{}>  = (props : any) => {
     const [typedValue, setTypedValue] = useState<string | undefined>();
     const inputRef = useRef<HTMLInputElement | null>(null);
     const dispatch = useDispatch();
+    const { FetchingNPMListAction } = useActions();
     const { loading, data } = useSelector((state : any)=> state.repositoryReducer)
 
     useEffect(() => {
@@ -16,7 +18,7 @@ const SearchComponent: React.FC<{}>  = (props : any) => {
     },[ inputRef ])
 
     const searchNPM = () => {
-        dispatch(FetchingNPMListAction(typedValue));
+        FetchingNPMListAction(typedValue);
     }
 
     return (

@@ -2,7 +2,7 @@ import axios from "axios";
 import { ActionType, ActionTypeArr } from "../actionType/actionType"
 import { Dispatch } from "redux";
 
-export const FetchingNPMListAction = (searchTerm : string | undefined) : any => {
+export const FetchingNPMListAction = (searchTerm : string | undefined) : any=> {
     return async (dispatch: Dispatch<ActionType>) => {
             dispatch({
                 type: ActionTypeArr.PENDING,
