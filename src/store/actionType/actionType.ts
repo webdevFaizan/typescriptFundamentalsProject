@@ -1,7 +1,7 @@
   export interface StateInterface {
     error: string | null;
     loading: boolean;
-    data: string[] | string | null;
+    data: string[] | null;
   }
   
   export enum ActionTypeArr {

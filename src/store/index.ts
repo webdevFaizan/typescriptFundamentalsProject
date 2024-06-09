@@ -1,5 +1,2 @@
 export * as ActionCreators from './actions/index';
-export * from './store';
- 
-
-
+export * as RootState from './store';

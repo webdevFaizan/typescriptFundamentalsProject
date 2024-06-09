@@ -1,15 +1,15 @@
 import { useEffect, useRef, useState } from "react";
 import { useDispatch } from "react-redux";
-// import { FetchingNPMListAction } from "../../store/actions";
 import { useSelector } from "react-redux";
 import useActions from "../../hooks/useActions";
+import { useAppSelector } from "../../hooks/useSelector";
 
 const SearchComponent: React.FC<{}>  = (props : any) => {
     const [typedValue, setTypedValue] = useState<string | undefined>();
     const inputRef = useRef<HTMLInputElement | null>(null);
     const dispatch = useDispatch();
     const { FetchingNPMListAction } = useActions();
-    const { loading, data } = useSelector((state : any)=> state.repositoryReducer)
+    const { loading, data } = useAppSelector((state)=> state.repositoryReducer)
 
     useEffect(() => {
         if(inputRef.current) {

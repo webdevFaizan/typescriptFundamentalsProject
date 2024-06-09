@@ -6,7 +6,6 @@ const initialState = {
   data: null,
 };
 
-
 const Reducer = (
   state: StateInterface = initialState,
   action: ActionType
