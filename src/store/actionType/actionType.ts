@@ -12,7 +12,6 @@
 
   export type ActionType = ActionPending | ActionSuccess | ActionError;
 
-
   export interface ActionPending {
     type: ActionTypeArr.PENDING;
     payload: null;
